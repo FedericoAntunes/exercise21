@@ -19,11 +19,22 @@ class User extends Model {
           notNull: true,
           notEmpty: true,
         },
+        username: {
+          type: DataTypes.STRING,
+          notNull: true,
+          notEmpty: true,
+          unique: true,
+        },
         email: {
           type: DataTypes.STRING,
           notNull: true,
           notEmpty: true,
           unique: true,
+        },
+        password: {
+          type: DataTypes.STRING,
+          notNull: true,
+          notEmpty: true,
         },
       },
       {

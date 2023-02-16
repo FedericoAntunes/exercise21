@@ -1,20 +1,25 @@
 const { User, Article, Comment } = require("../models");
+const bcrypt = require("bcryptjs");
 
 /* In the userController we define the handlers functions for the routes that modifies the users table in the DB. */
 
 // Show the form for creating a new resource.
 async function store(req, res) {
   // First we define the constants with the parameters we get from the forms.
-  const firstname = req.body.firstName;
-  const lastname = req.body.lastName;
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  const username = req.body.username;
   const email = req.body.email;
-
+  const password = req.body.password;
+  const hashedPassword = await bcrypt.hash(password, 10);
   // Then we use "try" to create the new user
   try {
     await User.create({
       firstname: firstname,
       lastname: lastname,
+      username: username,
       email: email,
+      password: hashedPassword,
     });
     res.redirect("/");
   } catch (error) {

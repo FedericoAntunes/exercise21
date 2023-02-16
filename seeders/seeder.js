@@ -27,7 +27,9 @@ module.exports = async () => {
       users.push({
         firstname: await faker.name.firstName(),
         lastname: await faker.name.lastName(),
-        email: faker.internet.email(),
+        email: await faker.internet.email(),
+        password: 1234,
+        username: await faker.internet.userName(),
       });
     } else {
       users.push({

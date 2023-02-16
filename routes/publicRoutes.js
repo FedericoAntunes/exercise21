@@ -9,5 +9,6 @@ router.get("/crear_articulo", pageController.showArticleForm);
 router.get("/articulo/:id", pageController.showOneArticle);
 router.get("/crear_usuario", pageController.showUserForm);
 router.get("/api/articulos", pageController.showArticlesApi);
+router.get("/login", pageController.showLoginForm);
 
 module.exports = router;

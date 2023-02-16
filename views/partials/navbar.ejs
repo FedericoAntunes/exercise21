@@ -20,12 +20,15 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/">Inicio</a>
           </li>
+          <% if(!user) {%>
           <li class="nav-item">
             <a class="nav-link" href="/crear_usuario">Registrar nuevo usuario</a>
           </li>
+          <%} else {%>
           <li class="nav-item">
             <a class="nav-link" href="/crear_articulo">Crear un nuevo artículo</a>
           </li>
+          <% } %>
         </ul>
       </div>
     </div>

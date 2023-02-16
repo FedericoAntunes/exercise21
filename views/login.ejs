@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Crear nuevo usuario</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,54 +22,42 @@
   </head>
   <body>
     <%- include("partials/navbar") %>
-    <div class="container createNewArticleForm">
-      <div class="text-bg-light p-3 mt-2 border">
-        <h3>Crear nuevo artículo</h3>
+    <div class="container createNewUserForm">
+      <div class="text-bg-light p-3 border">
+        <h3>Ingresa a tu cuenta</h3>
       </div>
       <form
         id="createForm"
         name="createForm"
         class="shadow-lg p-4 border needs-validation"
         method="post"
-        action="/articulos/crear"
-        enctype="multipart/form-data"
+        action="/login"
       >
         <div class="mb-3">
-          <label for="title" class="form-label">Título *</label>
+          <label for="email" class="form-label">Dirección email *</label>
           <input
             type="text"
             class="form-control"
-            id="title"
-            placeholder="Ingresar título..."
-            name="title"
+            id="email"
+            placeholder="Ingresar email..."
+            name="email"
             required
           />
-          <div class="invalid-feedback">El campo título es obligatorio.</div>
+          <div class="invalid-feedback">El campo dirección mail es obligatorio.</div>
         </div>
         <div class="mb-3">
-          <label for="content" class="form-label">Contenido *</label>
+          <label for="password" class="form-label">Contraseña *</label>
           <input
-            type="text"
+            type="password"
             class="form-control"
-            id="content"
-            placeholder="Ingresar contenido..."
-            name="content"
+            id="password"
+            placeholder="Ingresar contraseña..."
+            name="password"
             required
           />
-          <div class="invalid-feedback">El campo contenido es obligatorio.</div>
+          <div class="invalid-feedback">El campo contraseña es obligatorio.</div>
         </div>
-        <div class="mb-3">
-          <label for="image" class="form-label">Portada del artículo</label>
-          <input
-            type="file"
-            class="form-control"
-            id="image"
-            placeholder="Ingresar url de la imágen..."
-            name="image"
-          />
-          <div class="invalid-feedback">El campo contenido es obligatorio.</div>
-        </div>
-        <button id="createArticle" class="btn btn-dark mt-3">Guardar artículo</button>
+        <button id="login" class="btn btn-dark">Ingresar</button>
       </form>
       <a class="pt-5 d-block text-decoration-none" href="http://localhost:3000">← Volver</a>
     </div>

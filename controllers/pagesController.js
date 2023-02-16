@@ -31,6 +31,10 @@ async function showUserForm(req, res) {
   res.render("createUser");
 }
 
+async function showLoginForm(req, res) {
+  res.render("login");
+}
+
 async function showArticlesApi(req, res) {
   const articles = await Article.findAll({ include: [User, Comment], order: [["id", "DESC"]] });
 
@@ -43,4 +47,5 @@ module.exports = {
   showArticleForm,
   showOneArticle,
   showUserForm,
+  showLoginForm,
 };

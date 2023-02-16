@@ -23,6 +23,9 @@
     <%- include("partials/navbar") %>
     <div class="container">
       <div class="row shadow border p-3">
+        <% if(user) {%>
+        <p>Bienvenido <%= user.username %></p>
+        <% } %>
         <h2 class="text-center">Últimos artículos</h2>
         <hr />
         <!-- SHOW THE LATEST ARTICLE -->

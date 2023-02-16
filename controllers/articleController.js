@@ -15,23 +15,23 @@ async function store(req, res) {
 
   form.parse(req, async (err, fields, files) => {
     // Parse form and generate resource
+    const loggedUser = req.user;
     const title = fields.title;
     const content = fields.content;
-    const user = fields.user;
     const image = files.image.newFilename;
     if (files.image.originalFilename === "") {
       await Article.create({
         title: title,
         content: content,
         image: "default-image.jpg",
-        userId: user,
+        userId: loggedUser.id,
       });
     } else {
       await Article.create({
         title: title,
         content: content,
         image: image,
-        userId: user,
+        userId: loggedUser.id,
       });
     }
 
